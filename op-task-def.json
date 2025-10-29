@@ -1,8 +1,8 @@
 {
   "compatibilities": [
     "EC2",
-    "FARGATE",
-    "MANAGED_INSTANCES"
+    "MANAGED_INSTANCES",
+    "FARGATE"
   ],
   "containerDefinitions": [
     {
@@ -10,7 +10,7 @@
       "environment": [],
       "environmentFiles": [],
       "essential": true,
-      "image": "public.ecr.aws/n2p7k0f2/op-repo",
+      "image": "743992917930.dkr.ecr.us-east-1.amazonaws.com/op-repo",
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
@@ -26,16 +26,16 @@
       "portMappings": [
         {
           "appProtocol": "http",
-          "containerPort": 80,
-          "hostPort": 80,
-          "name": "op-nodejs-cont-80-tcp",
+          "containerPort": 5000,
+          "hostPort": 5000,
+          "name": "op-nodejs-cont-5000-tcp",
           "protocol": "tcp"
         },
         {
           "appProtocol": "http",
-          "containerPort": 5000,
-          "hostPort": 5000,
-          "name": "op-nodejs-cont-5000-tcp",
+          "containerPort": 80,
+          "hostPort": 80,
+          "name": "op-nodejs-cont-80-tcp",
           "protocol": "tcp"
         }
       ],
@@ -51,7 +51,7 @@
   "memory": "3072",
   "networkMode": "awsvpc",
   "placementConstraints": [],
-  "registeredAt": "2025-10-29T10:51:35.996Z",
+  "registeredAt": "2025-10-29T11:00:59.268Z",
   "registeredBy": "arn:aws:iam::743992917930:root",
   "requiresAttributes": [
     {
@@ -61,10 +61,13 @@
       "name": "ecs.capability.execution-role-awslogs"
     },
     {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
     },
     {
-      "name": "com.amazonaws.ecs.capability.task-iam-role"
+      "name": "ecs.capability.execution-role-ecr-pull"
     },
     {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -79,14 +82,13 @@
   "requiresCompatibilities": [
     "FARGATE"
   ],
-  "revision": 2,
+  "revision": 3,
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
   "status": "ACTIVE",
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:743992917930:task-definition/op-task-def:2",
-  "taskRoleArn": "arn:aws:iam::743992917930:role/ecsTaskExecutionRole",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:743992917930:task-definition/op-task-def:3",
   "volumes": [],
   "tags": []
 }

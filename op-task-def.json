@@ -45,7 +45,6 @@
     }
   ],
   "cpu": "1024",
-  # "enableFaultInjection": false,
   "executionRoleArn": "arn:aws:iam::743992917930:role/ecsTaskExecutionRole",
   "family": "op-task-def",
   "memory": "3072",
